@@ -1,0 +1,19 @@
+{
+  "name": "invoice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tailwindcss -i ./src/input.css -o ./public/style.css —watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@iconify/tailwind": "^0.1.4",
+    "tailwindcss": "^3.4.3"
+  },
+  "dependencies": {
+    "@iconify/json": "^2.2.202"
+  }
+}
