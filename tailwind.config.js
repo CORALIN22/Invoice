@@ -1,5 +1,3 @@
-const { addDynamicIconSelectors } = require("@iconify/tailwind");
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./public/*.{html,js}"],
@@ -9,23 +7,17 @@ module.exports = {
         primary: "#67A7DB",
         secondary: "#487599",
         tertiary: "#393E46",
-        borderMain: "#5E6E85",
+        borderMain: "#d6d6d6",
         border2: "#FAFAFA",
         backgroundColor: "#EEEEEE",
         bgButton: "#D1E5F4",
         pureWhite: "#FFFF",
-      },
-      fontFamily: {
-        inter: ["Inter", "sans-serif"],
-        roboto: ["Roboto", "sans-serif"],
+        placeHolder: "#AAAAAA",
       },
       letterSpacing: {
         moreWide: ".75em",
       },
     },
   },
-  plugins: [
-    // Iconify plugin
-    addDynamicIconSelectors(),
-  ],
+  plugins: [],
 };
