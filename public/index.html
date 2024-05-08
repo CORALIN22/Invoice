@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="/public/style.css" />
     <link rel="stylesheet" href="/public/general.css" />
   </head>
-  <body class="bg-backgroundColor">
+  <body class="md:container md:m-auto bg-backgroundColor">
     <header
-      class="bg-pureWhite px-16 h-36 flex flex-row justify-between items-center"
+      class="bg-pureWhite px-16 h-36 flex flex-row justify-between items-center w-full"
     >
       <div>
         <h2 class="text-2xl text-tertiary tracking-moreWide font-black">
@@ -17,110 +17,207 @@
         </h2>
         <h4 class="text-base text-secondary">Invoice Smarter, Grow Faster</h4>
       </div>
-      <nav class="">
-        <ul class="flex justify-evenly gap-8 text-2xl">
-          <li class="text-primary">Home</li>
-          <li>Features</li>
-          <li>Pricing</li>
-          <li>About Us</li>
-          <li>Contact</li>
+      <nav>
+        <ul class="flex justify-evenly gap-8">
+          <li>
+            <a
+              class="inline-block hover:text-primary active:text-primary focus:outline-none focus:ring focus:ring-textFocus font-medium no-underline text-2xl no-background transition-all duration-300"
+              href="#"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              class="inline-block hover:text-primary active:text-primary focus:outline-none focus:ring focus:ring-textFocus font-medium no-underline text-2xl no-background transition-all duration-300"
+              href="#"
+              >Features</a
+            >
+          </li>
+          <li>
+            <a
+              class="inline-block hover:text-primary active:text-primary focus:outline-none focus:ring focus:ring-textFocus font-medium no-underline text-2xl no-background transition-all duration-300"
+              href="#"
+              >About Us</a
+            >
+          </li>
+          <li>
+            <a
+              class="inline-block hover:text-primary active:text-primary focus:outline-none focus:ring focus:ring-textFocus font-medium no-underline text-2xl no-background transition-all duration-300"
+              href="#"
+              >Contact Us</a
+            >
+          </li>
         </ul>
       </nav>
     </header>
 
-    <main class="mx-auto w-10/12 h-auto mt-32 bg-pureWhite py-24 px-44">
+    <main class="mx-auto h-auto mt-32 bg-pureWhite py-24 px-44">
       <div class="flex justify-start gap-16 w-full">
-        <div class="w-1/2">
+        <div class="w-full mt-10">
           <section class="company flex flex-col gap-4">
             <div class="flex items-center gap-2">
               <p class="text-lg font-bold">Your Company</p>
-              <img
-                src="/assets/circum--edit-2.svg"
-                class="w-7"
-                alt="edit-icon"
-              />
+              <button class="show-modal-comp">
+                <img
+                  src="/assets/circum--edit-2.svg"
+                  class="w-7"
+                  alt="edit-icon"
+                />
+              </button>
             </div>
             <div
-              class="w-10/12 h-40 border-solid border-2 border-borderMain rounded-lg"
+              class="w-full h-52 border-solid border-2 border-borderMain rounded-lg"
             ></div>
           </section>
           <section class="billTo flex flex-col gap-4 mt-16">
             <div class="flex items-center gap-2">
               <p class="text-lg font-bold">Bill To:</p>
-              <img
-                src="/assets/circum--edit-2.svg"
-                class="w-7"
-                alt="edit-icon"
-              />
+              <button class="show-modal-cust">
+                <img
+                  src="/assets/circum--edit-2.svg"
+                  class="w-7"
+                  alt="edit-icon"
+                />
+              </button>
             </div>
             <div
-              class="w-10/12 h-40 border-solid border-2 border-borderMain rounded-lg"
+              class="w-full h-52 border-solid border-2 border-borderMain rounded-lg"
             ></div>
           </section>
         </div>
 
-        <div class="flex flex-col gap-8 p-8 w-1/2">
-          <div class="grid grid-cols-2 items-center gap-16">
-            <label for="invoice" class="text-lg font-bold justify-self-end"
-              >Invoice</label
-            >
-            <input
-              type="number"
-              id="invoice"
-              placeholder="#"
-              required
-              class="p-4 text-base border-solid border-2 border-borderMain rounded-lg w-64"
-            />
-          </div>
-
-          <!-- Use a flex container for aligning content at the bottom -->
-          <div class="flex justify-end">
+        <div class="grid grid-rows-1 gap-8 p-8 w-full">
+          <div class="flex justify-end w-full">
             <label
               for="getFile"
-              class="border-solid border-2 border-borderMain p-10 w-64 mr-20 text-center rounded-lg text-lg text-placeHolder"
+              class="border-solid border-2 border-borderMain p-14 text-center rounded-lg text-lg text-placeHolder m-1"
               >Add Your Logo</label
             >
             <input type="file" id="getFile" class="hidden" placeholder="" />
           </div>
 
-          <div class="grid grid-cols-2 items-center gap-16">
-            <label for="date" class="text-lg justify-self-end"> Date</label>
+          <div class="grid grid-cols-2 justify-items-end items-center gap-4">
+            <label for="invoice" class="text-lg font-bold">Invoice</label>
+            <input
+              type="number"
+              id="invoice"
+              placeholder="#"
+              required
+              class="p-4 text-base border-solid border-2 border-borderMain rounded-lg w-full m-1"
+            />
+          </div>
+
+          <!-- Use a flex container for aligning content at the bottom -->
+
+          <div class="grid grid-cols-2 justify-items-end items-center gap-4">
+            <label for="date" class="text-lg"> Date</label>
             <input
               type="date"
               id="date"
               placeholder=""
               required
-              class="p-3 text-base border-solid border-2 border-borderMain rounded-lg w-64"
+              class="p-4 text-base border-solid border-2 border-borderMain rounded-lg w-full m-1"
             />
           </div>
 
-          <div class="grid grid-cols-2 items-center gap-16">
-            <label for="due-date" class="text-lg justify-self-end"
-              >Due Date</label
-            >
+          <div class="grid grid-cols-2 justify-items-end items-center gap-4">
+            <label for="due-date" class="text-lg">Due Date</label>
             <input
               type="date"
               id="due-date"
               placeholder="#"
               required
-              class="p-3 text-base border-solid border-2 border-borderMain rounded-lg w-64"
+              class="p-4 text-base border-solid border-2 border-borderMain rounded-lg w-full m-1"
             />
           </div>
 
-          <div class="grid grid-cols-2 items-center gap-16">
-            <label for="payment-terms" class="text-lg justify-self-end"
-              >Payment Terms</label
-            >
+          <div class="grid grid-cols-2 justify-items-end items-center gap-4">
+            <label for="payment-terms" class="text-lg">Payment Terms</label>
             <input
               type="text"
               id="payment-terms"
               placeholder=""
               required
-              class="p-3 text-base border-solid border-2 border-borderMain rounded-lg w-64"
+              class="p-3 text-base border-solid border-2 border-borderMain rounded-lg w-full"
             />
           </div>
         </div>
       </div>
+
+      <div class="modal-comp hidden">
+        <button class="close-modal-comp">&times;</button>
+        <h1 class="text-center text-2xl font-bold">Company Details</h1>
+        <div>
+          <label for="company-name">Company Name</label>
+          <input type="text" id="company-name" class="comp-name" required />
+        </div>
+        <div>
+          <label for="address">Address</label>
+          <input type="text" id="address" class="address" required />
+        </div>
+        <div>
+          <label for="email-add">Email Address</label>
+          <input type="email" id="email-add" class="email-add" required />
+        </div>
+        <div>
+          <label for="contact-num">Contact Number</label>
+          <input
+            type="number"
+            id="contact-num"
+            class="contact-number"
+            required
+          />
+        </div>
+      </div>
+
+      <div class="modal-cust hidden flex flex-col gap-11 cta">
+        <button class="close-modal-cust">&times;</button>
+        <h1 class="text-2xl font-bold text-center">Customer Detail</h1>
+        <div class="flex flex-col gap-8">
+          <div class="text-xl font-medium flex flex-col gap-4">
+            <label class="block" for="customer-name">Customer Name</label>
+            <input
+              type="text"
+              id="cust-name"
+              class="cust-name p-4 text-2xl rounded-lg shadow-lg"
+              required
+            />
+          </div>
+          <div class="text-xl font-medium flex flex-col gap-4">
+            <label class="block" for="address">Address</label>
+            <input
+              type="text"
+              id="address"
+              class="address p-4 text-2xl rounded-lg shadow-lg"
+              required
+            />
+          </div>
+          <div class="text-xl font-medium flex flex-col gap-4">
+            <label class="block" for="email-add">Email Address</label>
+            <input
+              type="email"
+              id="email-add"
+              class="email-add p-4 text-2xl rounded-lg shadow-lg"
+              required
+            />
+          </div>
+          <div class="text-xl font-medium flex flex-col gap-4">
+            <label class="block" for="contact-num">Contact Number</label>
+            <input
+              type="number"
+              id="contact-num"
+              class="contact-number p-4 text-2xl rounded-lg shadow-lg"
+              required
+            />
+          </div>
+        </div>
+        <div class="flex gap-4 justify-center">
+          <button>Save</button>
+          <button>Clear All</button>
+        </div>
+      </div>
+      <div class="overlay hidden"></div>
     </main>
   </body>
+  <script src="/public/modal.js"></script>
 </html>
